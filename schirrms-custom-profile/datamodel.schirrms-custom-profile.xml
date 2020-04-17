@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0">
+	<constants>
+	</constants>
+	<classes>
+	</classes>
+	<menus>
+	</menus>
+	<user_rights>
+		<profiles>
+			<profile id="50" _delta="define">
+				<name>Read-Only Except Requests</name>
+				<description>Users with this profile are allowed to browse through all objects in the application and to create/modify user requests (either through the portal or in the normal application)</description>
+				<groups>
+					<group id="Portal user - write">
+						<actions>
+							<action xsi:type="write">allow</action>
+						</actions>
+					</group>
+					<group id="Portal user - delete">
+						<actions>
+							<action xsi:type="delete">allow</action>
+						</actions>
+					</group>
+					<group id="class:UserRequest">
+						<actions>
+							<action id="ev_close" xsi:type="stimulus">allow</action>
+						</actions>
+					</group>
+					<group id="*">
+						<actions>
+							<action xsi:type="read">allow</action>
+							<action xsi:type="bulk read">allow</action>
+						</actions>
+					</group>
+				</groups>
+			</profile>
+			<profile id="51" _delta="define">
+				<name>Read-Only No Portal Access</name>
+				<description>Users with this profile are allowed to browse through all objects in the application but not to modify anything (event through the portal)</description>
+				<groups>
+					<group id="*">
+						<actions>
+							<action xsi:type="read">allow</action>
+							<action xsi:type="bulk read">allow</action>
+						</actions>
+					</group>
+				</groups>
+			</profile>
+		</profiles>
+	</user_rights>
+</itop_design>
