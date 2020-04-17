@@ -15,7 +15,7 @@ SetupWebPage::AddModule(
 		// Setup
 		//
 		'dependencies' => array(
-			'itop-config-mgmt/2.1.0'
+			'itop-profiles-itil/1.0.0'
 		),
 		'mandatory' => false,
 		'visible' => true,
