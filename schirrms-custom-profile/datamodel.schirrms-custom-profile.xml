@@ -12,17 +12,13 @@
 				<name>Read-Only Except Requests</name>
 				<description>Users with this profile are allowed to browse through all objects in the application and to create/modify user requests (either through the portal or in the normal application)</description>
 				<groups>
-					<group id="Portal user - write">
+					<group id="Portal">
 						<actions>
 							<action xsi:type="write">allow</action>
-						</actions>
-					</group>
-					<group id="Portal user - delete">
-						<actions>
 							<action xsi:type="delete">allow</action>
 						</actions>
 					</group>
-					<group id="class:UserRequest">
+					<group id="UserRequest">
 						<actions>
 							<action id="ev_close" xsi:type="stimulus">allow</action>
 						</actions>
