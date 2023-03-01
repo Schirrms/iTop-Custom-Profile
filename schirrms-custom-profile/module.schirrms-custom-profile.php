@@ -5,7 +5,7 @@
 
 SetupWebPage::AddModule(
 	__FILE__, // Path to the current file, all other file names are relative to the directory containing this file
-	'schirrms-custom-profile/0.0.1',
+	'schirrms-custom-profile/0.1.0',
 	array(
 		// Identification
 		//
@@ -15,7 +15,8 @@ SetupWebPage::AddModule(
 		// Setup
 		//
 		'dependencies' => array(
-			'itop-profiles-itil/1.0.0'
+			'itop-profiles-itil/1.0.0',
+			'itop-config-mgmt/2.7.0'
 		),
 		'mandatory' => false,
 		'visible' => true,

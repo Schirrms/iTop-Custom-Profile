@@ -45,6 +45,24 @@
 					</group>
 				</groups>
 			</profile>
+			<profile id="3" _delta="must_exist">
+			  <groups>
+				  <group id="WriteDeleteCustom" _delta="define">
+					  <actions>
+              <action id="action:write">allow</action>
+              <action id="action:bulk write">allow</action>
+              <action id="action:delete">allow</action>
+            </actions>
+					</group>
+				</groups>
+			</profile>
 		</profiles>
+		<groups>
+		  <group id="WriteDeleteCustom" _delta="define">
+			  <classes>
+			    <class id="lnkContactToFunctionalCI"/>
+				</classes>
+			</group>
+		</groups>
 	</user_rights>
 </itop_design>
