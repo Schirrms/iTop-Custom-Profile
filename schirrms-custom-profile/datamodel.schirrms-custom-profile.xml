@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0">
-	<constants>
-	</constants>
-	<classes>
-	</classes>
-	<menus>
-	</menus>
-	<user_rights>
-		<profiles>
-			<profile id="4567" _delta="define">
-				<name>API Access</name>
-				<description>Users with this profile can use the REST API to access and manipulate data, but also manage personal token and get access to DataModel and OQL queries.</description>
-				<groups>
+  <constants>
+  </constants>
+  <classes>
+  </classes>
+  <menus>
+  </menus>
+  <user_rights>
+    <profiles>
+      <profile id="4567" _delta="define">
+        <name>API Access</name>
+        <description>Users with this profile can manage personal token and get access to DataModel and OQL queries.They must also be members of the 'REST/Json' profile to actually use it.</description>
+        <groups>
           <group id="Query">
             <actions>
               <action id="action:write">allow</action>
@@ -19,49 +19,52 @@
           </group>
           <group id="PersonalToken">
             <actions>
-							<action xsi:type="read">allow</action>
-							<action xsi:type="bulk read">allow</action>
+              <action id="action:read">allow</action>
               <action id="action:write">allow</action>
+              <action id="action:delete">allow</action>
+              <action id="action:bulk read">allow</action>
+              <action id="action:bulk write">allow</action>
+              <action id="action:bulk delete">allow</action>
             </actions>
           </group>
-					<group id="*">
-						<actions>
-							<action xsi:type="read">allow</action>
-							<action xsi:type="bulk read">allow</action>
-						</actions>
-					</group>
-				</groups>
-			</profile>
-			<profile id="51" _delta="define">
-				<name>Read-Only No Portal Access</name>
-				<description>Users with this profile are allowed to browse through all objects in the application but not to modify anything (event through the portal)</description>
-				<groups>
-					<group id="*">
-						<actions>
-							<action xsi:type="read">allow</action>
-							<action xsi:type="bulk read">allow</action>
-						</actions>
-					</group>
-				</groups>
-			</profile>
-			<profile id="3" _delta="must_exist">
-			  <groups>
-				  <group id="WriteDeleteCustom" _delta="define">
-					  <actions>
+          <group id="*">
+            <actions>
+              <action xsi:type="read">allow</action>
+              <action xsi:type="bulk read">allow</action>
+            </actions>
+          </group>
+        </groups>
+      </profile>
+      <profile id="51" _delta="define">
+        <name>Read-Only No Portal Access</name>
+        <description>Users with this profile are allowed to browse through all objects in the application but not to modify anything (event through the portal)</description>
+        <groups>
+          <group id="*">
+            <actions>
+              <action xsi:type="read">allow</action>
+              <action xsi:type="bulk read">allow</action>
+            </actions>
+          </group>
+        </groups>
+      </profile>
+      <profile id="3" _delta="must_exist">
+        <groups>
+          <group id="WriteDeleteCustom" _delta="define">
+            <actions>
               <action id="action:write">allow</action>
               <action id="action:bulk write">allow</action>
               <action id="action:delete">allow</action>
             </actions>
-					</group>
-				</groups>
-			</profile>
-		</profiles>
-		<groups>
-		  <group id="WriteDeleteCustom" _delta="define">
-			  <classes>
-			    <class id="lnkContactToFunctionalCI"/>
-				</classes>
-			</group>
-		</groups>
-	</user_rights>
+          </group>
+        </groups>
+      </profile>
+    </profiles>
+    <groups>
+      <group id="WriteDeleteCustom" _delta="define">
+        <classes>
+          <class id="lnkContactToFunctionalCI"/>
+        </classes>
+      </group>
+    </groups>
+  </user_rights>
 </itop_design>
