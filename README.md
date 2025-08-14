@@ -28,3 +28,11 @@ The goal is to :
 * and also a full 'read only' access to the back portal.
 
 I'm not sure how to activate the third point…
+
+### Summary
+
+As far as I understand, the 'simple' goal to give access to the REST/Api, to the management of personal token and the access to the Datamodel, the OQL query is achieved in different places:
+
+* REST/Json access: this doesn't seems to be integrated as a group or a class, it's a specific profile. So the user wanting to access the API needs to be member of this profile.
+* Access to the DataModel and the OQL Query: This is the goal of this version of the extension, and this is allowed by the 'API Access' profile
+* Right to manage personal token: this is done in adding the 'API Access' profile in the 'personal_tokens_allowed_profiles' array in the 'authent-token' part of the module section of the configuration file.

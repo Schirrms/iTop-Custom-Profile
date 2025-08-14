@@ -7,24 +7,23 @@
   <menus>
   </menus>
   <user_rights>
+    <groups>
+      <group id="OQLQuery" _delta="define">
+        <classes>
+          <!-- This class list is also present in AdminTools group -->
+          <class id="QueryOQL"/>
+          <class id="ResourceRunQueriesMenu"/>
+        </classes>
+      </group>
+    </groups> 
     <profiles>
       <profile id="4567" _delta="define">
         <name>API Access</name>
         <description>Users with this profile can manage personal token and get access to DataModel and OQL queries.They must also be members of the 'REST/Json' profile to actually use it.</description>
         <groups>
-          <group id="Query">
+          <group id="OQLQuery">
             <actions>
               <action id="action:write">allow</action>
-            </actions>
-          </group>
-          <group id="PersonalToken">
-            <actions>
-              <action id="action:read">allow</action>
-              <action id="action:write">allow</action>
-              <action id="action:delete">allow</action>
-              <action id="action:bulk read">allow</action>
-              <action id="action:bulk write">allow</action>
-              <action id="action:bulk delete">allow</action>
             </actions>
           </group>
           <group id="*">
