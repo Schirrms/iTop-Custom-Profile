@@ -8,23 +8,15 @@
 	</menus>
 	<user_rights>
 		<profiles>
-			<profile id="50" _delta="define">
-				<name>Read-Only Except Requests</name>
-				<description>Users with this profile are allowed to browse through all objects in the application and to create/modify user requests (either through the portal or in the normal application)</description>
+			<profile id="4567" _delta="define">
+				<name>API Access</name>
+				<description>Users with this profile can use the REST API to access and manipulate data, but also manage personal token and get access to DataModel and OQL queries.</description>
 				<groups>
-					<group id="Portal">
-						<actions>
-							<action xsi:type="write">allow</action>
-							<action xsi:type="delete">allow</action>
-						</actions>
-					</group>
-					<group id="UserRequest">
-						<actions>
-							<action id="action:write">allow</action>
-							<action id="ev_close" xsi:type="stimulus">allow</action>
-							<action id="ev_reopen" xsi:type="stimulus">allow</action>
-						</actions>
-					</group>
+          <group id="Query">
+            <actions>
+              <action id="action:write">allow</action>
+            </actions>
+          </group>
 					<group id="*">
 						<actions>
 							<action xsi:type="read">allow</action>
