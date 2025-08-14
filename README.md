@@ -6,12 +6,25 @@ https://www.itophub.io/wiki/page?id=latest%3Acustomization%3Aadd-profile-sample
 
 ## version 0.1.0
 
-As the use of iTop grew in our conpany, we started to need more than two profiles:
+As the use of iTop grew in our company, we started to need more than two profiles:
 
-  * a (big) group of people having just the 'ReadOnly' right 
-	* a very little group of iTop Administrator with full access
-	
-	We started to use the 'Configuration Manager' profile for 'Power Users'. But this profile didn't have all the nececcary rights in our context (maybe related to our heavy customization).
-	Oddly, those profile member were allowed to remove a CI, or a Contact, but not the link between 'FunctionalCIs' and 'Contacts' (with the effective effect that they weren't able to remove a CI with Contact or a Contact with CIs) 
+* a (big) group of people having just the 'ReadOnly' right 
+* a very little group of iTop Administrator with full access
 
-	So I extended this contribution to be able to deal with those situation.
+We started to use the 'Configuration Manager' profile for 'Power Users'. But this profile didn't have all the necessary rights in our context (maybe related to our heavy customization).
+Oddly, those profile member were allowed to remove a CI, or a Contact, but not the link between 'FunctionalCIs' and 'Contacts' (with the effective effect that they weren't able to remove a CI with Contact or a Contact with CIs)
+
+So I extended this contribution to be able to deal with those situation.
+
+## version 0.2.0
+
+I'm trying to create a new 'API access' profile.
+
+The goal is to :
+
+* Give the REST/Json access (this is not mandatory, but it will beat the use of two profiles)
+* Give access to the OQL Query module and the Datamodel module in the back portail
+* Allow the access to the user token profile
+* and also a full 'read only' access to the back portal.
+
+I'm not sure how to activate the third point…
