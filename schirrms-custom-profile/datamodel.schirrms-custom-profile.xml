@@ -19,6 +19,8 @@
           </group>
           <group id="PersonalToken">
             <actions>
+							<action xsi:type="read">allow</action>
+							<action xsi:type="bulk read">allow</action>
               <action id="action:write">allow</action>
             </actions>
           </group>
