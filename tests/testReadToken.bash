@@ -14,10 +14,23 @@
 # the idea is to use two system variable for the URL and the TOKEN:
 # ITOP_URL
 # ITOP_TOKEN
+
+if [ "X$ITOP_URL" = "X" ]
+then
+    echo "$0 : it seems that the URL of the iTop server is not set in \$ITOP_URL…"
+    exit 1
+fi
+
+if [ "X$ITOP_TOKEN" = "X" -o $(echo -n $ITOP_TOKEN | wc -c) -lt 100 ]
+then
+    echo "$0 : it seems that the Application Tokoneof the iTop server is not set or invalid in \$ITOP_TOKEN…"
+    exit 1
+fi
+
 # QUEST='{ "operation": "core/get", "class": "Organization", "key": "SELECT Organization", "output_fields": "friendlyname, email" }'
 QUEST='{ "operation": "core/get", "class": "Organization", "key": "SELECT Organization", "output_fields": "name, id" }'
-echo "curl -X POST -F 'version=1.4' -F auth_token=ITOP_TOKEN_Value ${ITOP_URL}/webservices/rest.php -F json_data=\"$QUEST\""
-ANS=$(curl -X POST -F 'version=1.4' -F auth_token=${ITOP_TOKEN} ${ITOP_URL}/webservices/rest.php -F json_data="$QUEST")
+echo "curl -L -X POST -F 'version=1.4' -F auth_token=ITOP_TOKEN_Value ${ITOP_URL}/webservices/rest.php -F json_data=\"$QUEST\""
+ANS=$(curl -L -X POST -F 'version=1.4' -F auth_token=${ITOP_TOKEN} ${ITOP_URL}/webservices/rest.php -F json_data="$QUEST")
 # If jq is in the path, we can parse the JSON response
 if command -v jq &> /dev/null
 then
